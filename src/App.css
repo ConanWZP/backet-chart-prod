@@ -63,7 +63,7 @@
 .table {
   display: flex;
   flex-direction: column;
-
+  z-index: 5;
 }
 
 .thead {
@@ -83,6 +83,7 @@
 .td {
   width: 33%;
   text-align: right;
+  z-index: 10;
 }
 
 .td:nth-child(1) {
@@ -97,15 +98,18 @@
 .half{
   cursor: pointer;
   position: relative;
+  z-index: 5;
 }
 
 
 .bgc {
-  position: absolute; top: 0; right: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
 /*  width: 50%;*/
   height: 100%;
 
-  z-index: -1;
+  z-index: 3;
   transition: width 0.3s ease-in-out;
 }
 
@@ -217,8 +221,9 @@
   overflow: hidden;
 }
 
+/*
 @media (max-width: 1500px) {
   .sideBarDataLeft {
     left: 0;
   }
-}
+}*/

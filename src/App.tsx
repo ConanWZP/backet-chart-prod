@@ -1,6 +1,5 @@
 import {useEffect, useState} from 'react'
 import './App.css'
-import './index.css'
 import TableBody from "./components/TableComponents/TableBody/TableBody.tsx";
 import {TypeOffers} from "./types/objectsTypes.ts";
 import {generateDataObject} from "./utils/generators.ts";
