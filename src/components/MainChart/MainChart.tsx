@@ -9,16 +9,21 @@ interface MainCharProps {
 }
 const MainChart:FC<MainCharProps> = ({chartData, darkMode}) => {
 
-    const chartContainerRef = useRef(null )
+    const chartContainerRef = useRef(null)
 
 
     useEffect(() => {
 
+        const handleResize = () => {
+            if (window.innerWidth < 1500) {
+                chart.applyOptions({ width: window.innerWidth - 20 });
+            }
+        };
         const chartOptions = {
             layout: {
                 background: {type: ColorType.Solid, color: 'white'}
             },
-            width: 800,
+            width: window.innerWidth < 1500 ? window.innerWidth - 40 : 800,
             height: 500,
         }
 
@@ -31,7 +36,7 @@ const MainChart:FC<MainCharProps> = ({chartData, darkMode}) => {
                 vertLines: {color: '#444'},
                 horzLines: {color: '#444'},
             },
-            width: 800,
+            width: window.innerWidth < 1500 ? window.innerWidth - 40 : 800,
             height: 500,
         }
 
@@ -64,14 +69,17 @@ const MainChart:FC<MainCharProps> = ({chartData, darkMode}) => {
 
 
         newSeries.setData(chartData as (AreaData<Time> | WhitespaceData<Time>)[])
+        window.addEventListener('resize', handleResize);
 
-        return () => chart.remove()
+        return () => {
+            window.removeEventListener('resize', handleResize);
+            chart.remove()
+
+        }
     }, [chartData, darkMode]);
 
     return (
-        <div ref={chartContainerRef} className={'mainChart'}>
-
-        </div>
+        <div ref={chartContainerRef} className={'mainChart'} />
     );
 };
 

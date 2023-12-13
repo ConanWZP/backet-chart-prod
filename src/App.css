@@ -52,6 +52,13 @@
   justify-content: space-between;
 }
 
+@media (max-width: 1500px) {
+  .main {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+}
 
 .table {
   display: flex;
@@ -208,4 +215,10 @@
   box-shadow: 1px 1px 6px 1px #7d53f2;
   border-radius: 15px;
   overflow: hidden;
+}
+
+@media (max-width: 1500px) {
+  .sideBarDataLeft {
+    left: 0;
+  }
 }
