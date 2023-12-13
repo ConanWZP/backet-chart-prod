@@ -1,0 +1,211 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#root {
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.table {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.thead {
+  padding: 5px 0;
+}
+
+.tbody {
+  width: 380px;
+
+}
+
+.tr {
+  display: flex;
+  margin: 10px 0;
+}
+
+.td {
+  width: 33%;
+  text-align: right;
+}
+
+.td:nth-child(1) {
+  text-align: start;
+  padding-left: 7px;
+}
+
+.td:nth-child(3) {
+  padding-right: 7px;
+}
+
+.half{
+  cursor: pointer;
+  position: relative;
+}
+
+
+.bgc {
+  position: absolute; top: 0; right: 0;
+/*  width: 50%;*/
+  height: 100%;
+
+  z-index: -1;
+  transition: width 0.3s ease-in-out;
+}
+
+.bgcG {
+  background-color: rgb(45, 60, 46)
+}
+
+.bgcR {
+  background-color: rgb(59, 38, 38);;
+}
+
+.priceSelling {
+  color: rgb(255, 150, 142);
+}
+
+.priceBuying {
+  color: rgb(150, 213, 142);
+}
+
+.lastTrade {
+  margin: 30px 0;
+  text-align: left;
+  font-size: 20px;
+  padding-left: 7px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.lastTradeArrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lastTradeArrowUp {
+  color: rgb(150, 213, 142);
+}
+
+.lastTradeArrowDown {
+  color: rgb(255, 150, 142);
+}
+
+@keyframes appearing {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+
+.sideBarData {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  padding: 5px;
+  width: 220px;
+  max-height: 250px;
+  overflow-y: auto;
+  background-color: rgba(136, 136, 136, 0.5);
+  border-radius: 5px;
+  color: white;
+  cursor: default;
+}
+
+.sideBarDataLeft {
+  left: -230px;
+}
+
+
+.sideBarDataRight {
+  right: -230px;
+}
+
+.sideBarOffer {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+
+.sideBarOffer:last-child {
+  margin-bottom: 0;
+}
+
+.blockButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.chartBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.mainChart {
+  border: 1px solid #2f2f2f;
+  box-shadow: 1px 1px 6px 1px #7d53f2;
+  border-radius: 15px;
+  overflow: hidden;
+}
