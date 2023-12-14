@@ -23,6 +23,7 @@ function App() {
         value: '26000',
         flag: '0'
     })
+    // можно использовать useState(() => ...)
     const [historyTradeData, setHistoryTradeData] = useState<ITradeHistory[]>([{
         value: 26000,
         time: Math.floor((new Date().getTime() - new Date().getTimezoneOffset()*60*1000)/1000)
@@ -76,7 +77,7 @@ function App() {
 
             return () => clearInterval(generateAndSetData)
         }
-
+    // здесь каждый раз когда изменяется sellingData buyingData передергивается таймер, этого можно избежать
     }, [sellingData, buyingData, isPause]);
 
 

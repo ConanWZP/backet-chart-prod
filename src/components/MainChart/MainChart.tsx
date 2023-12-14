@@ -11,7 +11,7 @@ const MainChart:FC<MainCharProps> = ({chartData, darkMode}) => {
 
     const chartContainerRef = useRef(null)
 
-
+    // чарт сбрасываем зум при каждом запуске эффекта
     useEffect(() => {
 
         const handleResize = () => {
@@ -36,6 +36,7 @@ const MainChart:FC<MainCharProps> = ({chartData, darkMode}) => {
                 vertLines: {color: '#444'},
                 horzLines: {color: '#444'},
             },
+            // размеры контейнера не относятся к теме, их можно вынести
             width: window.innerWidth < 1500 ? window.innerWidth - 40 : 800,
             height: 500,
         }

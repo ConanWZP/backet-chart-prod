@@ -12,7 +12,8 @@ interface TableBodyProps {
 }
 
 const TableBody: FC<TableBodyProps> = ({sellingData, buyingData, lastTrade}) => {
-
+    // насколько я понял большая часть этих состояний не нужна, это просто рассчетные значения которые зависят от пропсов
+    // все это можно заменить на useMemo, убрать эффекты которые приводят к лишним рендерам
     const [limitedSellingData, setLimitedSellingData] = useState<[string, IOfferData, boolean][]>([])
     const [maxSellingTotal, setMaxSellingTotal] = useState(1)
     const [limitedBuyingData, setLimitedBuyingData] = useState<[string, IOfferData, boolean][]>([])
@@ -75,6 +76,7 @@ const TableBody: FC<TableBodyProps> = ({sellingData, buyingData, lastTrade}) => 
 
 
     return (
+        // можно добиться такого эффекта чтобы бары всегда ездили плавно без скачков
         <div className={'tbody'}>
             {
                 limitedSellingData.map((el: [string, IOfferData, boolean]) => (
